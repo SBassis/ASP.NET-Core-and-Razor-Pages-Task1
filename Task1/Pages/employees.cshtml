@@ -1,0 +1,45 @@
+﻿@page
+@model Task1.Pages.Index1Model
+@{
+}
+<br />
+<style>
+    table {
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 5px;
+        text-align: center;
+    }
+
+    th {
+        background-color: cornflowerblue;
+    }
+</style>
+<h2> Employees Data</h2>
+<table class="tabel" border="2">
+    <thead>
+        <tr>
+            <th>EmployeeID</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Position</th>
+            <th>Birth Date</th>
+            <th>Hire date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in Model.employeesList)
+        {
+            <tr>
+                <td>@employee.employeeID</td>
+                <td>@employee.name</td>
+                <td>@employee.address</td>
+                <td>@employee.position</td>
+                <td>@employee.birthDate</td>
+                <td>@employee.hireDate</td>
+            </tr>
+        }
+    </tbody>
+</table>
